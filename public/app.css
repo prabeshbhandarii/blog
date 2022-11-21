@@ -1,0 +1,14 @@
+body{
+	background-color: whitesmoke;
+	color: black;
+	max-width: 610px;
+	margin: auto;
+	padding-top: 20px;
+	font-family: sans-serif;
+	line-height: 1.6;
+}
+
+article + article{
+	padding-top: 20px;
+	border-top: 1px solid;
+}
