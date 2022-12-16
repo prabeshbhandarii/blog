@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers;
+use App\Models\Post;
+use App\Models\Category;
+use App\Models\User;
+
+class PostController extends Controller
+{
+    public function index(){
+        
+        
+            return view('posts', [
+                'posts' => $this->getPosts(),
+                'categories' => Category::all()
+            ]);;
+    }
+
+    public function show(Post $post){
+
+            return view('post', [
+                'posts' => $post
+            ]);
+    }
+
+    protected function getPosts(){
+
+        return Post::latest()->filter()->get();
+    }
+}
